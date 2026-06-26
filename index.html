@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaxon Sounds</title>
+    <title>Jaxon Sounds - Established 2026</title>
     <style>
+        :root {
+            --bg-color: #ffffff; /* New White Background */
+            --text-color: #2c3e50; /* Softer, darker grey text */
+            --button-color: #ecf0f1; /* Very subtle grey for button shape */
+            --button-hover: #bdc3c7; /* Subtle hover effect */
+            --accent-color: #34495e; /* Logo text color */
+        }
+
     /* Force the page to allow scrolling and take up full height */
     html, body {
         min-height: 100%;
@@ -13,26 +21,58 @@
     }
 
     body { 
-        font-family: sans-serif; 
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Cleaner, professional font */
         text-align: center; 
-        background-color: #1a1a1a; 
-        color: white; 
+        background-color: var(--bg-color); /* Updated BG */
+        color: var(--text-color); /* Updated text color */
         margin: 0;
-        padding: 20px 20px 80px 20px; /* Added extra padding at the bottom so the last row isn't squished */
+        padding: 40px 20px 100px 20px; /* Refined padding */
     }
 
     .container {
         position: relative;
         z-index: 10;
         height: auto;
+        max-width: 800px; /* Centered layout */
+        margin: 0 auto;
+    }
+
+    header {
+        margin-bottom: 50px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 30px;
+    }
+
+    .logo-img {
+        width: 150px; /* Slightly smaller, refined size */
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid #eee; /* Professional border */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Soft shadow */
+        object-fit: cover;
+    }
+
+    h1 {
+        font-weight: 300; /* Lighter weight for refinement */
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent-color);
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    .est-tag {
+        font-size: 12px;
+        color: #7f8c8d;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 600px;
-        margin: 30px auto; /* Ensures margins are even top and bottom */
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Responsive grid */
+        gap: 25px;
+        margin: 30px auto; 
     }
 
     /* Layout container for button + text */
@@ -40,21 +80,52 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 20px;
+        background: #fff;
+        padding: 15px;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* Button setup */
+    .sound-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    }
+
+    /* New Button setup - minimalist circle */
     button { 
-        width: 100px; 
-        height: 100px; 
+        width: 70px; /* Slightly smaller button */
+        height: 70px; 
         border-radius: 50%; 
-        border: none;
-        background-color: transparent; 
-        background-image: url('button 123.webp');
-        background-size: cover;
-        background-position: center;
+        border: 2px solid #ddd; /* Subtle border */
+        background-color: var(--button-color); /* Flat, light color */
+        /* background-image: removed */
         cursor: pointer;
-        transition: transform 0.1s ease;
+        transition: background-color 0.2s ease, transform 0.1s ease;
+        position: relative;
+    }
+
+    /* Subtle play icon hint */
+    button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 55%; /* Centered visually */
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 16px solid #95a5a6; /* Subtle grey icon */
+        transition: border-left-color 0.2s ease;
+    }
+
+    button:hover {
+        background-color: var(--button-hover);
+    }
+
+    button:hover::after {
+        border-left-color: #fff; /* White icon on hover */
     }
 
     /* Small tap effect */
@@ -64,143 +135,27 @@
 
     /* Text setup */
     span {
-        color: white; 
-        font-family: sans-serif;
-        font-size: 14px;
-        font-weight: bold;
-        margin-top: 8px; 
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        color: var(--text-color); /* Dark text */
+        font-size: 13px; /* Slightly refined size */
+        font-weight: 600; /* Semi-bold */
+        margin-top: 12px; 
+        text-shadow: none; /* Removed shadow for cleanliness */
         text-align: center;
-        max-width: 110px; /* Prevents long text from breaking the grid layout */
+        text-transform: capitalize; /* Cleaner look */
         word-wrap: break-word;
+        line-height: 1.3;
     }
 </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="peak png.png" alt="jaxon" style="width: 200px; border-radius: 50%;">
-        <h1>Jaxon Sounds</h1>
+        <header>
+            <img src="peak png.png" alt="jaxon" class="logo-img">
+            <h1>Jaxon Sounds</h1>
+            <div class="est-tag">Est. 2014 | Optimized Archive</div>
+        </header>
         
         <div class="grid">
-            <div class="sound-item">
+                        <div class="sound-item">
                 <button onclick="new Audio('Screen Recording 2026-03-10 221505.mp3').play()"></button>
-                <span>Android</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 221533.mp3').play()"></button>
-                <span>Jaxon Rizz</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 221353.mp3').play()"></button>
-                <span>FAHH jaxon</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('crazy-realistic-knocking-sound-troll-twitch-streamers_small.mp3').play()"></button>
-                <span>realistic knocking</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 224912.mp3').play()"></button>
-                <span>Jaxon GET OUT</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 225234.mp3').play()"></button>
-                <span>Wiener Jaxdog</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 231115.mp3').play()"></button>
-                <span>BRITISH RAP</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 231829.mp3').play()"></button>
-                <span>LOUD 67</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 232158.mp3').play()"></button>
-                <span>SUIIIII</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 233149.mp3').play()"></button>
-                <span>Whopper AD</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-10 233542.mp3').play()"></button>
-                <span>Stop The CAP</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-11 161110.mp3').play()"></button>
-                <span>Air horn</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-11 160954.mp3').play()"></button>
-                <span>MI BOMBO LOUD</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('Screen Recording 2026-03-11 160847.mp3').play()"></button>
-                <span>RIP MY GRANNY</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('what-the-hell-meme-sound-effect.mp3').play()"></button>
-                <span>WHAT DA HELLLLL</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('the-rock-sound-effect.mp3').play()"></button>
-                <span>Rock BOOM</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('caseoh-at-burger-king.mp3').play()"></button>
-                <span>Caseoh Burger king</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('999-social-credit-siren.mp3').play()"></button>
-                <span>siren loud</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('bark-fart-sound.mp3').play()"></button>
-                <span>bark fart</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('jaxon bye.mp3').play()"></button>
-                <span>jaxon bye loud</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('brain-fart.mp3').play()"></button>
-                <span>brain fart</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('shutup.swf.mp3').play()"></button>
-                <span>shut up</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('sheldon-lee-cooper-you-dawg.mp3').play()"></button>
-                <span>sheldon loud</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('fears-to-fathom-notification-sound.mp3').play()"></button>
-                <span>fears to fathom ns</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('du-bist-gut-genug.mp3').play()"></button>
-                <span>du bist gut genug</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('galaxy-meme.mp3').play()"></button>
-                <span>cut me off</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('ny-video-online-audio-converter.mp3').play()"></button>
-                <span>laugh</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('metal-pipe-clang.mp3').play()"></button>
-                <span>metal pipe</span>
-            </div>
-            <div class="sound-item">
-                <button onclick="new Audio('yara-yara-phonk.mp3').play()"></button>
-                <span>yara yara</span>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
